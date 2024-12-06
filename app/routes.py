@@ -13,23 +13,9 @@ def index():
     try:
         df = pd.read_csv(config.PATH_DADOS_PREPROCESSADOS)
         logging.info('Dados carregados com sucesso')
-        data = df.head().to_html()
+        data = df.to_html()
         
-        html = f"""
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Visualização de Dados</title>
-        </head>
-        <body>
-            <h1>Dados das Instituições de Ensino Superior</h1>
-            <div>{data}</div>
-        </body>
-        </html>
-        """
-        
-        return render_template_string(html)
+        return render_template('index.html', data=data)
     except Exception as e:
         logging.error(f'Erro ao carregar dados: {e}')
         return f"Erro ao carregar dados: {e}", 500
@@ -42,31 +28,7 @@ def questionario():
         salvar_respostas(respostas, afinidade)
         return redirect(url_for('resultado'))
     
-    # html = """
-    # <!DOCTYPE html>
-    # <html lang="en">
-    # <head>
-    #     <meta charset="UTF-8">
-    #     <title>Questionário</title>
-    # </head>
-    # <body>
-    #     <h1>Questionário</h1>
-    #     <form method="post">
-    #         {% for i, pergunta in enumerate(perguntas) %}
-    #             <div>
-    #                 <label for="pergunta_{{ i }}">{{ pergunta }}</label>
-    #                 <select name="pergunta_{{ i }}" id="pergunta_{{ i }}">
-    #                     <option value="Sim">Sim</option>
-    #                     <option value="Não">Não</option>
-    #                 </select>
-    #             </div>
-    #         {% endfor %}
-    #         <button type="submit">Enviar</button>
-    #     </form>
-    # </body>
-    # </html>
-    # """
-    return render_template('questionario.html', perguntas=perguntas_genericas)
+    return render_template('questionario.html', perguntas=perguntas_genericas, enumerate=enumerate)
 
 @app.route("/resultado")
 def resultado():
@@ -77,23 +39,7 @@ def resultado():
         questionario_html = df_questionario.to_html()
         afinidade_html = df_afinidade.to_html()
         
-        html = f"""
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Resultados do Questionário</title>
-        </head>
-        <body>
-            <h1>Resultados do Questionário</h1>
-            <div>{questionario_html}</div>
-            <h2>Afinidade</h2>
-            <div>{afinidade_html}</div>
-        </body>
-        </html>
-        """
-        
-        return render_template_string(html)
+        return render_template('resultado.html', questionario=questionario_html, afinidade=afinidade_html)
     except Exception as e:
         logging.error(f'Erro ao carregar resultados do questionário: {e}')
         return f"Erro ao carregar resultados do questionário: {e}", 500
