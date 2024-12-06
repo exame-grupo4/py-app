@@ -1,0 +1,234 @@
+N,Nome da Variável,Descrição da Variável,Tipo,Tam.,Categoria,Observação,"Coleta por ano (""s""=sim;""n""=não ) ",,,,,,,,,,,,,,,Notas sobre diferenças entre os anos
+,,,,,,,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,
+,,,,,,,,,,,,,,,,,,,,,,
+1,NU_ANO_CENSO,Ano de referência do Censo da Educação Superior,Num,4,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+DADOS DO CURSO E IES,,,,,,,,,,,,,,,,,,,,,,
+2,NO_REGIAO,Nome da região geográfica do local de oferta do curso,Char,20,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+3,CO_REGIAO,Código da região geográfica do local de oferta do curso,Num,2,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+4,NO_UF,Nome da Unidade da Federação do local de oferta do curso,Char,50,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+5,SG_UF,Sigla da Unidade da Federação do local de oferta do curso,Char,2,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+6,CO_UF,Código do IBGE da Unidade da Federação do local de oferta do curso,Num,2,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+7,NO_MUNICIPIO,Nome do Município do local de oferta do curso,Char,150,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+8,CO_MUNICIPIO,Código do IBGE do Município do local de oferta do curso,Num,7,(.) Dados de Cursos a distância não calculados para esta dimensão geográfica e/ou Cursos a distância oferecidos por instituição de ensino brasileira no exterior,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+9,IN_CAPITAL,Informa se o local de oferta do curso está localizado na capital da Unidade da Federação,Num,1,"0. Não
+1. Sim
+(.) Não aplicável (Curso a distância)",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+10,TP_DIMENSAO,Tipo de dimensão geográfica dos cursos presenciais e a distância ofertados no Brasil e também por instituições brasileiras no exterior,Num,1,"1. Cursos presenciais ofertados no Brasil
+2. Cursos a distância ofertados no Brasil
+3. Cursos a distância com dimensão de dados somente a nível Brasil
+4. Cursos a distância ofertados por instituições brasileiras no exterior","Em virtude da estrutura da base da Educação Superior, para os cursos a distância não é possível quantificar o número de cursos, vagas e inscritos por Regiões Geográficas, Unidades da Federação e Municípios.",s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+11,TP_ORGANIZACAO_ACADEMICA,Tipo de Organização Acadêmica da IES,Num,1,"1. Universidade
+2. Centro Universitário
+3. Faculdade
+4. Instituto Federal de Educação, Ciência e Tecnologia                                
+5. Centro Federal de Educação Tecnológica",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+13,TP_REDE,Rede de Ensino,Num,1,"1. Pública
+2. Privada",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+12,TP_CATEGORIA_ADMINISTRATIVA,Tipo de Categoria Administrativa da IES,Num,1,"1. Pública Federal
+2. Pública Estadual
+3. Pública Municipal
+4. Privada com fins lucrativos
+5. Privada sem fins lucrativos
+6. Privada - Particular em sentido estrito
+7. Especial
+8. Privada comunitária
+9. Privada confessional",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,"* As categorias 6, 8 e 9 somente no ano de 2009.
+* Em 2012, foi criada a nova opção ""7"" Especial."
+14,IN_COMUNITARIA,Informa se a instituição privada é comunitária,Num,1,Informa se a instituição privada é comunitária,,n,n,n,n,n,n,n,n,n,n,n,n,n,n,s,
+15,IN_CONFESSIONAL,Informa se a instituição privada é confessional,Num,1,Informa se a instituição privada é confessional,,n,n,n,n,n,n,n,n,n,n,n,n,n,n,s,
+14,CO_IES,Código da Instituição ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+15,NO_CURSO,Nome do Curso,Char,200,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+16,CO_CURSO,Código do Curso,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+17,NO_CINE_ROTULO,"Nome do curso, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,120,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+18,CO_CINE_ROTULO,"Código de identificação do curso, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,7,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+19,CO_CINE_AREA_GERAL,"Código de identificação da área geral, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,2,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+20,NO_CINE_AREA_GERAL,"Nome da área geral, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,120,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+21,CO_CINE_AREA_ESPECIFICA,"Código de identificação da área específica, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,3,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+22,NO_CINE_AREA_ESPECIFICA,"Nome da área específica, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,120,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+23,CO_CINE_AREA_DETALHADA,"Código de identificação da área detalhada, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,4,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+24,NO_CINE_AREA_DETALHADA,"Nome da área detalhada, conforme adaptação da Classificação Internacional Normalizada da Educação Cine/Unesco",Char,120,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+25,TP_GRAU_ACADEMICO,Tipo do grau acadêmico conferido ao aluno pela conclusão dos requisitos exigidos pelo curso,Num,1,"1. Bacharelado
+2. Licenciatura
+3. Tecnológico
+4. Bacharelado e Licenciatura
+(.) Não aplicável (cursos com nível acadêmico igual a sequencial de formação específica ou cursos de área básica de Ingresso)",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+26,IN_GRATUITO,Informa se o curso é gratuito,Num,1,"0. Não
+1. Sim
+",,n,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+27,TP_MODALIDADE_ENSINO,Tipo de modalidade de ensino do curso,Num,1,"1. Presencial
+2. Curso a distância",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+28,TP_NIVEL_ACADEMICO,Tipo de nível acadêmico do curso,Num,1,"1. Graduação
+2. Sequencial de Formação Específica",,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+ESTATÍSTICAS DO CURSO,,,,,,,,,,,,,,,,,,,,,,
+29,QT_CURSO,Número de cursos,Num,4,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+30,QT_VG_TOTAL,Quantidade total de vagas oferecidas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+31,QT_VG_TOTAL_DIURNO,Quantidade total de vagas oferecidas no turno diurno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+32,QT_VG_TOTAL_NOTURNO,Quantidade total de vagas oferecidas no turno noturno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+33,QT_VG_TOTAL_EAD,Quantidade total de vagas oferecidas no curso a distância,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+34,QT_VG_NOVA,Quantidade de vagas novas oferecidas,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+35,QT_VG_PROC_SELETIVO,Quantidade de vagas nos processos seletivos,Num,8,,,s,s,s,s,s,n,n,n,n,n,n,n,n,n,n,* Apenas para os anos de 2009 a 2013
+36,QT_VG_REMANESC,Quantidade de vagas remanescentes,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+37,QT_VG_PROG_ESPECIAL,Quantidade de vagas oferecidas para programas especiais,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+38,QT_INSCRITO_TOTAL,Quantidade total de inscritos,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+39,QT_INSCRITO_TOTAL_DIURNO,Quantidade total de inscritos no turno diurno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+40,QT_INSCRITO_TOTAL_NOTURNO,Quantidade total de inscritos no turno noturno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+41,QT_INSCRITO_TOTAL_EAD,Quantidade total de inscritos no curso a distância,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+42,QT_INSC_VG_NOVA,Quantidade de inscritos no processo seletivo de vagas novas ,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+43,QT_INSC_PROC_SELETIVO,Quantidade de inscritos nos processos seletivos,Num,8,,,s,s,s,s,s,n,n,n,n,n,n,n,n,n,n,* Apenas para os anos de 2009 a 2013
+44,QT_INSC_VG_REMANESC,Quantidade de inscritos no processo seletivo de vagas remanescentes,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+45,QT_INSC_VG_PROG_ESPECIAL,Quantidade de inscritos no processo seletivo de vagas oferecidas para programas especiais,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+46,QT_ING,Quantidade de ingressantes,Num,8,Cálculo de ingressantes: soma do número de alunos com data de ingresso de 01 de janeiro e 01 de julho do ano de referência do censo,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+47,QT_ING_FEM,Quantidade de ingressantes do sexo feminino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+48,QT_ING_MASC,Quantidade de ingressantes do sexo masculino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+49,QT_ING_DIURNO,Quantidade de ingressantes no turno diurno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+50,QT_ING_NOTURNO,Quantidade de ingressantes no turno noturno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+51,QT_ING_VG_NOVA,Quantidade de ingressantes em vagas novas,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+52,QT_ING_VESTIBULAR,Quantidade de ingressantes por vestibular,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+53,QT_ING_ENEM,Quantidade de ingressantes pelo ENEM,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+54,QT_ING_AVALIACAO_SERIADA,Quantidade de ingressantes por meio da avaliação seriada,Num,8,,,n,n,n,n,s,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2012
+55,QT_ING_SELECAO_SIMPLIFICA,Quantidade de ingressantes por meio de seleção simplificada,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+56,QT_ING_EGR,Quantidade de alunos que se formaram em um curso de Bacharelado Interdisciplinar ou Licenciatura Interdisciplinar e que ingressaram em um curso de terminalidade,Num,8,,,n,n,n,n,n,n,n,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2015
+57,QT_ING_OUTRO_TIPO_SELECAO,Quantidade de ingressantes em outro tipo de seleção ,Num,8,,,s,s,s,s,s,n,n,n,n,n,n,n,n,n,n,* Apenas para os anos de 2009 a 2013
+58,QT_ING_PROC_SELETIVO,Quantidade de ingressantes nos processos seletivos,Num,8,,,s,s,s,s,s,n,n,n,n,n,n,n,n,n,n,* Apenas para os anos de 2009 a 2013
+59,QT_ING_VG_REMANESC,Quantidade de ingressantes por meio de vagas remanescentes,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+60,QT_ING_VG_PROG_ESPECIAL,Quantidade de ingressantes por meio de vagas para programas especiais,Num,8,,,n,n,n,n,n,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2013
+61,QT_ING_OUTRA_FORMA,Quantidade de ingressantes por outras formas de ingresso,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+62,QT_ING_0_17,Quantidade de ingressantes - Até 17 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+63,QT_ING_18_24,Quantidade de ingressantes - De 18 a 24 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+64,QT_ING_25_29,Quantidade de ingressantes - De 25 a 29 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+65,QT_ING_30_34,Quantidade de ingressantes - De 30 a 34 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+66,QT_ING_35_39,Quantidade de ingressantes - De 35 a 39 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+67,QT_ING_40_49,Quantidade de ingressantes - De 40 a 49 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+68,QT_ING_50_59,Quantidade de ingressantes - De 50 a 59 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+69,QT_ING_60_MAIS,Quantidade de ingressantes - De 60 ou mais anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+70,QT_ING_BRANCA,Quantidade de ingressantes - Cor/Raça Branca,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+71,QT_ING_PRETA,Quantidade de ingressantes - Cor/Raça Preta,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+72,QT_ING_PARDA,Quantidade de ingressantes - Cor/Raça Parda,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+73,QT_ING_AMARELA,Quantidade de ingressantes - Cor/Raça Amarela,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+74,QT_ING_INDIGENA,Quantidade de ingressantes - Cor/Raça Indígena,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+75,QT_ING_CORND,Quantidade de ingressantes - Cor/Raça não dispõe da informação ou não declarada,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+76,QT_MAT,Quantidade de matrículas,Num,8,Cálculo de matrículas: soma do número de alunos com situação de vínculo ao curso igual a: Cursando e/ou Formado,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+77,QT_MAT_FEM,Quantidade de matrículas do sexo feminino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+78,QT_MAT_MASC,Quantidade de matrículas do sexo masculino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+79,QT_MAT_DIURNO,Quantidade de matrículas - turno diurno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+80,QT_MAT_NOTURNO,Quantidade de matrículas - turno noturno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+81,QT_MAT_0_17,Quantidade de matrículas - Até 17 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+82,QT_MAT_18_24,Quantidade de matrículas - De 18 a 24 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+83,QT_MAT_25_29,Quantidade de matrículas - De 25 a 29 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+84,QT_MAT_30_34,Quantidade de matrículas - De 30 a 34 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+85,QT_MAT_35_39,Quantidade de matrículas - De 35 a 39 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+86,QT_MAT_40_49,Quantidade de matrículas - De 40 a 49 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+87,QT_MAT_50_59,Quantidade de matrículas - De 50 a 59 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+88,QT_MAT_60_MAIS,Quantidade de matrículas - De 60 ou mais anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+89,QT_MAT_BRANCA,Quantidade de matrículas - Cor/Raça Branca,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+90,QT_MAT_PRETA,Quantidade de matrículas - Cor/Raça Preta,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+91,QT_MAT_PARDA,Quantidade de matrículas - Cor/Raça Parda,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+92,QT_MAT_AMARELA,Quantidade de matrículas - Cor/Raça Amarela,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+93,QT_MAT_INDIGENA,Quantidade de matrículas - Cor/Raça Indígena,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+94,QT_MAT_CORND,Quantidade de matrículas - Cor/Raça não dispõe da informação ou não declarada,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+95,QT_CONC,Quantidade de concluintes,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+96,QT_CONC_FEM,Quantidade de concluintes do sexo feminino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+97,QT_CONC_MASC,Quantidade de concluintes do sexo masculino,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+98,QT_CONC_DIURNO,Quantidade de concluintes - turno diurno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+99,QT_CONC_NOTURNO,Quantidade de concluintes - turno noturno,Num,8,(.) Não aplicável (Curso a distância),,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+100,QT_CONC_0_17,Quantidade de concluintes - Até 17 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+101,QT_CONC_18_24,Quantidade de concluintes - De 18 a 24 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+102,QT_CONC_25_29,Quantidade de concluintes - De 25 a 29 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+103,QT_CONC_30_34,Quantidade de concluintes - De 30 a 34 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+104,QT_CONC_35_39,Quantidade de concluintes - De 35 a 39 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+105,QT_CONC_40_49,Quantidade de concluintes - De 40 a 49 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+106,QT_CONC_50_59,Quantidade de concluintes - De 50 a 59 anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+107,QT_CONC_60_MAIS,Quantidade de concluintes - De 60 ou mais anos de idade,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+108,QT_CONC_BRANCA,Quantidade de concluintes - Cor/Raça Branca,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+109,QT_CONC_PRETA,Quantidade de concluintes - Cor/Raça Preta,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+110,QT_CONC_PARDA,Quantidade de concluintes - Cor/Raça Parda,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+111,QT_CONC_AMARELA,Quantidade de concluintes - Cor/Raça Amarela,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+112,QT_CONC_INDIGENA,Quantidade de concluintes - Cor/Raça Indígena,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+113,QT_CONC_CORND,Quantidade de concluintes - Cor/Raça não dispõe da informação ou não declarada,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+114,QT_ING_NACBRAS,Quantidade de ingressantes - nacionalidade brasileira ou brasileira - nascido no exterior ou naturalizado,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+115,QT_ING_NACESTRANG,Quantidade de ingressantes - nacionalidade estrangeira,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+116,QT_MAT_NACBRAS,Quantidade de matrículas - nacionalidade brasileira ou brasileira - nascido no exterior ou naturalizado,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+117,QT_MAT_NACESTRANG,Quantidade de matrículas - nacionalidade estrangeira,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+118,QT_CONC_NACBRAS,Quantidade de concluintes - nacionalidade brasileira ou brasileira - nascido no exterior ou naturalizado,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+119,QT_CONC_NACESTRANG,Quantidade de concluintes - nacionalidade estrangeira,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+120,QT_ALUNO_DEFICIENTE,"Quantidade de alunos com deficiência, transtorno global do desenvolvimento ou altas habilidades/superdotação",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+121,QT_ING_DEFICIENTE,"Quantidade de ingressantes - alunos com deficiência, transtorno global do desenvolvimento ou altas habilidades/superdotação",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+122,QT_MAT_DEFICIENTE,"Quantidade de matrículas - alunos com deficiência, transtorno global do desenvolvimento ou altas habilidades/superdotação",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+123,QT_CONC_DEFICIENTE,"Quantidade de concluintes - alunos com deficiência, transtorno global do desenvolvimento ou altas habilidades/superdotação",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+124,QT_ING_FINANC,Quantidade de ingressantes - alunos que utilizam financiamento estudantil ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+125,QT_ING_FINANC_REEMB,Quantidade de ingressantes - alunos que utilizam financiamento estudantil reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+126,QT_ING_FIES,Quantidade de ingressantes - alunos que utilizam financiamento estudantil reembolsável  - FIES,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+127,QT_ING_RPFIES,Quantidade de ingressantes - alunos que utilizam financiamento estudantil reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+128,QT_ING_FINANC_REEMB_OUTROS,"Quantidade de ingressantes - alunos que utilizam financiamento estudantil reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+129,QT_ING_FINANC_NREEMB,Quantidade de ingressantes - alunos que utilizam financiamento estudantil não reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+130,QT_ING_PROUNII,Quantidade de ingressantes - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Integral,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+131,QT_ING_PROUNIP,Quantidade de ingressantes - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Parcial,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+132,QT_ING_NRPFIES,Quantidade de ingressantes - alunos que utilizam financiamento estudantil não reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+133,QT_ING_FINANC_NREEMB_OUTROS,"Quantidade de ingressantes - alunos que utilizam financiamento estudantil não reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+134,QT_MAT_FINANC,Quantidade de matrículas - alunos que utilizam financiamento estudantil ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+135,QT_MAT_FINANC_REEMB,Quantidade de matrículas - alunos que utilizam financiamento estudantil  reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+136,QT_MAT_FIES,Quantidade de matrículas - alunos que utilizam financiamento estudantil reembolsável  - FIES,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+137,QT_MAT_RPFIES,Quantidade de matrículas - alunos que utilizam financiamento estudantil reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+138,QT_MAT_FINANC_REEMB_OUTROS,"Quantidade de matrículas - alunos que utilizam financiamento estudantil reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+139,QT_MAT_FINANC_NREEMB,Quantidade de matrículas - alunos que utilizam financiamento estudantil não reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+140,QT_MAT_PROUNII,Quantidade de matrículas - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Integral,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+141,QT_MAT_PROUNIP,Quantidade de matrículas - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Parcial,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+142,QT_MAT_NRPFIES,Quantidade de matrículas - alunos que utilizam financiamento estudantil não reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+143,QT_MAT_FINANC_NREEMB_OUTROS,"Quantidade de matrículas - alunos que utilizam financiamento estudantil não reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+144,QT_CONC_FINANC,Quantidade de concluintes - alunos que utilizam financiamento estudantil ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+145,QT_CONC_FINANC_REEMB,Quantidade de concluintes - alunos que utilizam financiamento estudantil reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+146,QT_CONC_FIES,Quantidade de concluintes - alunos que utilizam financiamento estudantil reembolsável  - FIES,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+147,QT_CONC_RPFIES,Quantidade de concluintes - alunos que utilizam financiamento estudantil reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+148,QT_CONC_FINANC_REEMB_OUTROS,"Quantidade de concluintes - alunos que utilizam financiamento estudantil reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+149,QT_CONC_FINANC_NREEMB,Quantidade de concluintes - alunos que utilizam financiamento estudantil não reembolsável,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+150,QT_CONC_PROUNII,Quantidade de concluintes - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Integral,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+151,QT_CONC_PROUNIP,Quantidade de concluintes - alunos que utilizam financiamento estudantil não reembolsável  - PROUNI Parcial,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+152,QT_CONC_NRPFIES,Quantidade de concluintes - alunos que utilizam financiamento estudantil não reembolsável - administrado pela instituição,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+153,QT_CONC_FINANC_NREEMB_OUTROS,"Quantidade de concluintes - alunos que utilizam financiamento estudantil não reembolsável - pelo governo estadual, municipal, entidades externas à IES e outras entidades",Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+154,QT_ING_RESERVA_VAGA,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+155,QT_ING_RVREDEPUBLICA,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas - escola pública,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+156,QT_ING_RVETNICO,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas - cunho étnico,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+157,QT_ING_RVPDEF,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas - pessoas com deficiência,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+158,QT_ING_RVSOCIAL_RF,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas - cunho social/renda familiar,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+159,QT_ING_RVOUTROS,Quantidade de ingressantes - alunos que participam do programa de reserva de vagas - outros tipos,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+160,QT_MAT_RESERVA_VAGA,Quantidade de matrículas - alunos que participam do programa de reserva de vagas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+161,QT_MAT_RVREDEPUBLICA,Quantidade de matrículas - alunos que participam do programa de reserva de vagas - escola pública,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+162,QT_MAT_RVETNICO,Quantidade de matrículas - alunos que participam do programa de reserva de vagas - cunho étnico,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+163,QT_MAT_RVPDEF,Quantidade de matrículas - alunos que participam do programa de reserva de vagas - pessoas com deficiência,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+164,QT_MAT_RVSOCIAL_RF,Quantidade de matrículas - alunos que participam do programa de reserva de vagas - cunho social/renda familiar,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+165,QT_MAT_RVOUTROS,Quantidade de matrículas - alunos que participam do programa de reserva de vagas - outros tipos,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+166,QT_CONC_RESERVA_VAGA,Quantidade de concluintes - alunos que participam do programa de reserva de vagas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+167,QT_CONC_RVREDEPUBLICA,Quantidade de concluintes - alunos que participam do programa de reserva de vagas - escola pública,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+168,QT_CONC_RVETNICO,Quantidade de concluintes - alunos que participam do programa de reserva de vagas - cunho étnico,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+169,QT_CONC_RVPDEF,Quantidade de concluintes - alunos que participam do programa de reserva de vagas - pessoas com deficiência,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+170,QT_CONC_RVSOCIAL_RF,Quantidade de concluintes - alunos que participam do programa de reserva de vagas - cunho social/renda familiar,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+171,QT_CONC_RVOUTROS,Quantidade de concluintes - alunos que participam do programa de reserva de vagas - outros tipos,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+172,QT_SIT_TRANCADA,Quantidade de alunos com situação de vínculo no curso - matrícula trancada,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+173,QT_SIT_DESVINCULADO,Quantidade de alunos com situação de vínculo no curso - aluno desvinculado do curso,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+174,QT_SIT_TRANSFERIDO,Quantidade de alunos com situação de vínculo no curso - aluno transferido para outro curso da mesma IES,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+175,QT_SIT_FALECIDO,Quantidade de alunos com situação de vínculo no curso - aluno falecido,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+176,QT_ING_PROCESCPUBLICA,Quantidade de ingressantes que terminaram o ensino médio em escolas públicas ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+177,QT_ING_PROCESCPRIVADA,Quantidade de ingressantes que terminaram o ensino médio em escolas privadas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+178,QT_ING_PROCNAOINFORMADA,Quantidade de ingressantes que não informaram o tipo de escola que terminaram o ensino médio,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+179,QT_MAT_PROCESCPUBLICA,Quantidade de matrículas de alunos que terminaram o ensino médio em escolas públicas ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+180,QT_MAT_PROCESCPRIVADA,Quantidade de matrículas de alunos que terminaram o ensino médio em escolas privadas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+181,QT_MAT_PROCNAOINFORMADA,Quantidade de matrículas de alunos que não informaram o tipo de escola que terminaram o ensino médio,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+182,QT_CONC_PROCESCPUBLICA,Quantidade de concluintes que terminaram o ensino médio em escolas públicas ,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+183,QT_CONC_PROCESCPRIVADA,Quantidade de concluintes que terminaram o ensino médio em escolas privadas,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+184,QT_CONC_PROCNAOINFORMADA,Quantidade de concluintes que não informaram o tipo de escola que terminaram o ensino médio,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+185,QT_PARFOR,Quantidade de alunos que participam do programa especial para a formação de professores em exercício na rede pública de educação básica (PARFOR),Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+186,QT_ING_PARFOR,Quantidade de ingressantes que participam do programa especial para a formação de professores em exercício na rede pública de educação básica (PARFOR),Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+187,QT_MAT_PARFOR,Quantidade de matrículas de alunos que participam do programa especial para a formação de professores em exercício na rede pública de educação básica (PARFOR),Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+188,QT_CONC_PARFOR,Quantidade de concluintes que participam do programa especial para a formação de professores em exercício na rede pública de educação básica (PARFOR),Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+189,QT_APOIO_SOCIAL,Quantidade de alunos que recebem algum tipo de apoio social,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+190,QT_ING_APOIO_SOCIAL,Quantidade de ingressantes que recebem algum tipo de apoio social,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+191,QT_MAT_APOIO_SOCIAL,Quantidade de matrículas de alunos que recebem algum tipo de apoio social,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+192,QT_CONC_APOIO_SOCIAL,Quantidade de concluintes que recebem algum tipo de apoio social,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+193,QT_ATIV_EXTRACURRICULAR,Quantidade de alunos que participam de algum tipo de atividade extracurricular,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+194,QT_ING_ATIV_EXTRACURRICULAR,Quantidade de ingressantes que participam de algum tipo de atividade extracurricular,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+195,QT_MAT_ATIV_EXTRACURRICULAR,Quantidade de matrículas de alunos que participam de algum tipo de atividade extracurricular,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+196,QT_CONC_ATIV_EXTRACURRICULAR,Quantidade de concluintes que participam de algum tipo de atividade extracurricular,Num,8,,,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,
+197,QT_MOB_ACADEMICA,"Quantidade de alunos que se vincularam temporariamente a outra instituição, sendo ela nacional ou internacional",Num,8,,,n,n,n,n,s,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2012
+198,QT_ING_MOB_ACADEMICA,"Quantidade de ingressantes que se vincularam temporariamente a outra instituição, sendo ela nacional ou internacional",Num,8,,,n,n,n,n,s,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2012
+199,QT_MAT_MOB_ACADEMICA,"Quantidade de alunos regularmente matriculados que se vincularam temporariamente a outra instituição, sendo ela nacional ou internacional",Num,8,,,n,n,n,n,s,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2012
+200,QT_CONC_MOB_ACADEMICA,"Quantidade de concluintes que se vincularam temporariamente a outra instituição, sendo ela nacional ou internacional",Num,8,,,n,n,n,n,s,s,s,s,s,s,s,s,s,s,s,* Valor nulo para os anos de 2009 a 2012
