@@ -1,8 +1,6 @@
 import pandas as pd
 import config
 
-respostas_genericas = []
-
 def perguntar_genericamente():
     perguntas_genericas = [
         "Você gosta de trabalhar com números?",
@@ -12,7 +10,6 @@ def perguntar_genericamente():
         "Você gosta de trabalhar em equipe?",
         "Você prefere trabalhar em ambientes internos ou externos?",
         "Você se interessa por tecnologia?",
-        "Você gosta de resolver problemas complexos?",
         "Você prefere atividades criativas ou analíticas?",
         "Você se interessa por ciências humanas, exatas ou biológicas?",
         "Você gosta de atividades que envolvem comunicação?",
@@ -21,90 +18,53 @@ def perguntar_genericamente():
         # Adicione mais perguntas conforme necessário
     ]
 
+    respostas = []
     for pergunta in perguntas_genericas:
         resposta = input(pergunta + " (Sim/Não): ")
-        respostas_genericas.append(resposta)
+        respostas.append(resposta)
+    
+    return respostas
 
-
-# Função para calcular afinidade com áreas de conhecimento
 def calcular_afinidade(respostas):
-
     # Definir áreas de conhecimento e suas características
     areas_conhecimento = {
         "Engenharia": [
-            "práticas",
-            "tecnologia",
-            "resolver problemas complexos",
-            "analíticas",
-            "ciências exatas",
-            "números",
+            "Sim", "Não", "Sim", "Práticas", "Não", "Internos", "Sim", "Analíticas", "Exatas", "Não", "Números", "Sim"
         ],
         "Ciências Humanas": [
-            "teóricas",
-            "trabalhar em equipe",
-            "ciências humanas",
-            "comunicação",
-            "pessoas",
+            "Não", "Não", "Não", "Teóricas", "Sim", "Internos", "Não", "Criativas", "Humanas", "Sim", "Pessoas", "Sim"
         ],
         "Ciências Biológicas": [
-            "práticas",
-            "ambientes externos",
-            "ciências biológicas",
-            "resolver problemas complexos",
+            "Não", "Sim", "Sim", "Práticas", "Não", "Externos", "Não", "Analíticas", "Biológicas", "Não", "Pessoas", "Não"
         ],
         "Tecnologia da Informação": [
-            "tecnologia",
-            "resolver problemas complexos",
-            "analíticas",
-            "ciências exatas",
-            "números",
+            "Sim", "Não", "Sim", "Práticas", "Não", "Internos", "Sim", "Analíticas", "Exatas", "Não", "Números", "Sim"
         ],
-        "Artes": ["criativas", "ciências humanas", "comunicação", "atividades criativas"],
+        "Artes": [
+            "Não", "Não", "Não", "Criativas", "Sim", "Internos", "Não", "Criativas", "Humanas", "Sim", "Pessoas", "Não"
+        ],
         "Administração": [
-            "trabalhar em equipe",
-            "empreendedorismo",
-            "ciências humanas",
-            "comunicação",
-            "pessoas",
+            "Sim", "Não", "Sim", "Práticas", "Sim", "Internos", "Sim", "Analíticas", "Humanas", "Sim", "Pessoas", "Sim"
         ],
     }
 
     afinidade = {area: 0 for area in areas_conhecimento}
     for i, resposta in enumerate(respostas):
         for area, caracteristicas in areas_conhecimento.items():
-            if resposta in caracteristicas:
+            if resposta == caracteristicas[i]:
                 afinidade[area] += 1
     return afinidade
 
-
-# Exemplo de respostas de um estudante
-respostas_estudante = [
-    "práticas",
-    "trabalhar em equipe",
-    "ambientes internos",
-    "tecnologia",
-    "resolver problemas complexos",
-    "analíticas",
-    "ciências exatas",
-    "comunicação",
-    "números",
-    "empreendedorismo",
-]
-
-# Calcular afinidade do estudante com as áreas de conhecimento
-afinidade_estudante = calcular_afinidade(respostas_estudante)
-
-# Exibir afinidade do estudante com as áreas de conhecimento
-print("\nAfinidade do Estudante com as Áreas de Conhecimento:")
-for area, afinidade in afinidade_estudante.items():
-    print(f"{area}: {afinidade}")
-
+def sugerir_area_conhecimento(afinidade):
+    area_sugerida = max(afinidade, key=afinidade.get)
+    print(f"\nÁrea de conhecimento sugerida: {area_sugerida}")
 
 def carregar_questionario(filepath):
     df = pd.read_csv(filepath)
     return df.head()
 
-
 if __name__ == "__main__":
-    perguntar_genericamente()
+    respostas = perguntar_genericamente()
+    afinidade = calcular_afinidade(respostas)
+    sugerir_area_conhecimento(afinidade)
     print(carregar_questionario(config.PATH_QUESTIONARIO))

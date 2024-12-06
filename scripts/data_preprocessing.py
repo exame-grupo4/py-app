@@ -1,5 +1,6 @@
 import pandas as pd
 import logging
+import config
 
 # Configuração do logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -30,6 +31,6 @@ if __name__ == "__main__":
     if df is not None:
         df = preprocessar_dados(df)
         if df is not None:
-            output_filepath = 'data/preprocessed_data.csv'
+            output_filepath = config.PATH_DADOS_PREPROCESSADOS
             df.to_csv(output_filepath, index=False)
             logging.info(f'Dados pré-processados salvos em {output_filepath}')
