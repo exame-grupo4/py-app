@@ -25,26 +25,62 @@ def show_questionario():
     print("\nAfinidade: \n")
     print(carregar_afinidade(config.PATH_AFINIDADE))
 
-perguntas_genericas = [
-    "Você gosta de trabalhar com números?",
-    "Você prefere atividades ao ar livre?",
-    "Você gosta de resolver problemas complexos?",
-    "Você prefere atividades práticas ou teóricas?",
-    "Você gosta de trabalhar em equipe?",
-    "Você prefere trabalhar em ambientes internos ou externos?",
-    "Você se interessa por tecnologia?",
-    "Você prefere atividades criativas ou analíticas?",
-    "Você se interessa por ciências humanas, exatas ou biológicas?",
-    "Você gosta de atividades que envolvem comunicação?",
-    "Você prefere trabalhar com números ou com pessoas?",
-    "Você se interessa por empreendedorismo?",
+perguntas_avaliativas = [
+    {
+        "question":"Você gosta de trabalhar com números?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você prefere atividades ao ar livre?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você gosta de resolver problemas complexos?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você prefere atividades práticas ou teóricas?",
+        "options": ["Práticas", "Teóricas"]
+    },
+    {
+        "question":"Você gosta de trabalhar em equipe?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você prefere trabalhar em ambientes internos ou externos?",
+        "options": ["Internos", "Externos"]
+    },
+    {
+        "question":"Você se interessa por tecnologia?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você prefere atividades criativas ou analíticas?",
+        "options": ["Criativas", "Analíticas"]
+    },
+    {
+        "question":"Você se interessa por ciências humanas, exatas ou biológicas?",
+        "options": ["Humanas", "Exatas", "Biológicas"]
+    },
+    {
+        "question":"Você gosta de atividades que envolvem comunicação?",
+        "options": ["Sim", "Não"]
+    },
+    {
+        "question":"Você prefere trabalhar com números ou com pessoas?",
+        "options": ["Números", "Pessoas"]
+    },
+    {
+        "question":"Você se interessa por empreendedorismo?",
+        "options": ["Sim", "Não"]
+    },
     # Adicione mais perguntas conforme necessário
 ]
 
 def perguntar_genericamente():
 
     respostas = []
-    for pergunta in perguntas_genericas:
+    for pergunta in perguntas_avaliativas:
         resposta = "Sim" #input(pergunta + " (Sim/Não): ")
         respostas.append(resposta)
     
@@ -71,6 +107,20 @@ def calcular_afinidade(respostas):
         "Administração": [
             "Sim", "Não", "Sim", "Práticas", "Sim", "Internos", "Sim", "Analíticas", "Humanas", "Sim", "Pessoas", "Sim"
         ],
+        
+        "Programas básicos":[
+            "Sim", "Não", "Sim", "Práticas", "Não", "Internos", "Sim", "Analíticas", "Exatas", "Não", "Números", "Sim"
+        ],
+        # "Negócios, administração e direito":[],
+        # "Ciências naturais, matemática e estatística":[],
+        # "Educação":[],
+        # "Ciências sociais, comunicação e informação":[],
+        # "Engenharia, produção e construção":[],
+        # "Computação e Tecnologias da Informação e Comunicação (TIC)":[],
+        # "Serviços":[],
+        # "Artes e humanidades":[],
+        # "Agricultura, silvicultura, pesca e veterinária":[],
+        # "Saúde e bem-estar":[],
     }
 
     afinidade = {area: 0 for area in areas_conhecimento}
@@ -86,7 +136,7 @@ def sugerir_area_conhecimento(afinidade):
 
 def salvar_respostas(respostas, afinidade):
     df_perguntas_respostas = pd.DataFrame({
-        'pergunta': perguntas_genericas,
+        'pergunta': [pergunta['question'] for pergunta in perguntas_avaliativas],
         'resposta': respostas
     })
     

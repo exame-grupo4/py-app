@@ -9,10 +9,11 @@
     <form method="post">
         {% for i, pergunta in enumerate(perguntas) %}
             <div>
-                <label for="pergunta_{{ i }}">{{ pergunta }}</label>
+                <label for="pergunta_{{ i }}">{{ pergunta['question'] }}</label>
                 <select name="pergunta_{{ i }}" id="pergunta_{{ i }}">
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
+                    {% for option in pergunta['options'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
                 </select>
             </div>
         {% endfor %}

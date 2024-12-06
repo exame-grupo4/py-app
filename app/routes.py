@@ -3,7 +3,7 @@ import pandas as pd
 import config
 import logging
 from app import app
-from scripts.questionario import perguntas_genericas, calcular_afinidade, salvar_respostas, sugerir_cursos
+from scripts.questionario import perguntas_avaliativas, calcular_afinidade, salvar_respostas, sugerir_cursos
 
 logging.basicConfig(level=logging.INFO)
 
@@ -23,12 +23,12 @@ def index():
 @app.route("/", methods=["GET", "POST"])
 def questionario():
     if request.method == "POST":
-        respostas = [request.form.get(f"pergunta_{i}") for i in range(len(perguntas_genericas))]
+        respostas = [request.form.get(f"pergunta_{i}") for i in range(len(perguntas_avaliativas))]
         afinidade = calcular_afinidade(respostas)
         salvar_respostas(respostas, afinidade)
         return redirect(url_for('resultado'))
     
-    return render_template('questionario.html', perguntas=perguntas_genericas, enumerate=enumerate)
+    return render_template('questionario.html', perguntas=perguntas_avaliativas, enumerate=enumerate)
 
 @app.route("/resultado")
 def resultado():
