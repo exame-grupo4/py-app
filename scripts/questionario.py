@@ -100,9 +100,21 @@ def carregar_afinidade(filepath):
     return df_afinidade.head()
 
 def sugerir_cursos(area_sugerida):
-    df = pd.read_csv(config.PATH_MICRODADOS, sep=';', encoding='latin1')
-    cursos_sugeridos = df[df['TP_ORGANIZACAO_ACADEMICA'] == area_sugerida]['NO_IES'].unique()
-    return cursos_sugeridos
+    df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=';', encoding='latin1')
+    
+    # Mapeamento das áreas de afinidade para cursos específicos
+    area_to_cursos = {
+        "Engenharia": ["Engenharia Civil", "Engenharia Elétrica", "Engenharia Mecânica"],
+        "Ciências Humanas": ["Psicologia", "Sociologia", "Filosofia"],
+        "Ciências Biológicas": ["Biologia", "Medicina", "Enfermagem"],
+        "Tecnologia da Informação": ["Ciência da Computação", "Sistemas de Informação", "Engenharia de Software"],
+        "Artes": ["Artes Visuais", "Música", "Teatro"],
+        "Administração": ["Administração", "Gestão de Negócios", "Empreendedorismo"]
+    }
+    
+    cursos_sugeridos = area_to_cursos.get(area_sugerida, [])
+    cursos_disponiveis = df[df['NO_CURSO'].isin(cursos_sugeridos)]['NO_CURSO'].unique()
+    return cursos_disponiveis
 
 if __name__ == "__main__":
     questionar()

@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.INFO)
 def index():
     logging.info('Rota / acessada')
     try:
-        df = pd.read_csv(config.PATH_DADOS_PREPROCESSADOS)
+        df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS)
         logging.info('Dados carregados com sucesso')
-        data = df.to_html()
+        data = df[['NO_CINE_AREA_GERAL']].to_html()
         
         return render_template('index.html', data=data)
     except Exception as e:

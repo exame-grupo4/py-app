@@ -1,4 +1,4 @@
-from scripts.data_preprocessing import carregar_dados, preprocessar_dados
+from scripts.data_preprocessing import carregar_dados, preprocessar_dados, preprocessar_cursos
 from scripts.questionario import questionar
 from app import app
 import config
@@ -9,8 +9,11 @@ if __name__ == "__main__":
     df = preprocessar_dados(df)
     df.to_csv(config.PATH_DADOS_PREPROCESSADOS, index=False)
     
+    df = preprocessar_cursos(df)
+    df.to_csv(config.PATH_CURSOS_PREPROCESSADOS, index=False)
+    
     # Executar questionário
-    questionar()
+    # questionar()
     
     # Iniciar aplicação Flask
     app.run(debug=True)
