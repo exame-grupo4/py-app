@@ -39,8 +39,8 @@ def resultado():
         questionario_html = df_questionario.to_html()
         afinidade_html = df_afinidade.to_html()
         
-        area_sugerida = df_afinidade.loc[df_afinidade['pontuacao'].idxmax()]['area_conhecimento']
-        cursos_sugeridos = sugerir_cursos(area_sugerida)
+        df_cursos = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS)
+        cursos_sugeridos = df_cursos['NO_CINE_AREA_GERAL'].unique()
         
         cursos_html = "<ul>"
         for curso in cursos_sugeridos:

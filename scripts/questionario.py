@@ -1,7 +1,14 @@
 import pandas as pd
 import config
+from scripts.data_preprocessing import preprocessar_cursos, carregar_dados
 
 def questionar():
+    # Preprocessar cursos
+    df = carregar_dados(config.PATH_MICRODADOS)
+    df = preprocessar_cursos(df)
+    df.to_csv(config.PATH_CURSOS_PREPROCESSADOS, index=False)
+    
+    # Realizar questionário
     respostas = perguntar_genericamente()
     afinidade = calcular_afinidade(respostas)
     area_sugerida = max(afinidade, key=afinidade.get)
@@ -101,19 +108,7 @@ def carregar_afinidade(filepath):
 
 def sugerir_cursos(area_sugerida):
     df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=';', encoding='latin1')
-    
-    # Mapeamento das áreas de afinidade para cursos específicos
-    area_to_cursos = {
-        "Engenharia": ["Engenharia Civil", "Engenharia Elétrica", "Engenharia Mecânica"],
-        "Ciências Humanas": ["Psicologia", "Sociologia", "Filosofia"],
-        "Ciências Biológicas": ["Biologia", "Medicina", "Enfermagem"],
-        "Tecnologia da Informação": ["Ciência da Computação", "Sistemas de Informação", "Engenharia de Software"],
-        "Artes": ["Artes Visuais", "Música", "Teatro"],
-        "Administração": ["Administração", "Gestão de Negócios", "Empreendedorismo"]
-    }
-    
-    cursos_sugeridos = area_to_cursos.get(area_sugerida, [])
-    cursos_disponiveis = df[df['NO_CURSO'].isin(cursos_sugeridos)]['NO_CURSO'].unique()
+    cursos_disponiveis = df['NO_CINE_AREA_GERAL'].unique()
     return cursos_disponiveis
 
 if __name__ == "__main__":

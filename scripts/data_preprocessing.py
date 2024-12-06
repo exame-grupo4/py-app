@@ -22,7 +22,7 @@ def carregar_dados(caminho_arquivo):
 def preprocessar_dados(df):
     try:
         # Realizar pré-processamento necessário
-        df = df.dropna()  # Exemplo de pré-processamento
+        # df = df.dropna()  # Exemplo de pré-processamento
         logging.info("Pré-processamento concluído com sucesso")
         return df
     except Exception as e:
@@ -32,36 +32,10 @@ def preprocessar_dados(df):
 
 def preprocessar_cursos(df):
     try:
-        # Realizar pré-processamento necessário
-        df = df[
-            [
-                "CO_CURSO",
-                "NO_CURSO",
-                "NO_CINE_ROTULO",
-                "CO_CINE_ROTULO",
-                "CO_CINE_AREA_GERAL",
-                "NO_CINE_AREA_GERAL",
-                "CO_CINE_AREA_ESPECIFICA",
-                "NO_CINE_AREA_ESPECIFICA",
-                "CO_CINE_AREA_DETALHADA",
-                "NO_CINE_AREA_DETALHADA",
-            ]
-        ]
-        # df = df.dropna()  # Exemplo de pré-processamento
-        df = df.drop_duplicates()
-        logging.info("Pré-processamento concluído com sucesso")
-        return df
+        df = df[["NO_CINE_AREA_GERAL", "CO_CINE_AREA_GERAL"]]
+        df = df.drop_duplicates(subset="CO_CINE_AREA_GERAL")
+        logging.info("Pré-processamento de cursos concluído com sucesso")
+        return df[["NO_CINE_AREA_GERAL"]]
     except Exception as e:
-        logging.error(f"Erro no pré-processamento dos dados: {e}")
+        logging.error(f"Erro no pré-processamento dos cursos: {e}")
         return None
-
-
-""" if __name__ == "__main__":
-    filepath = 'data/raw_data.csv'
-    df = carregar_dados(filepath)
-    if df is not None:
-        df = preprocessar_dados(df)
-        if df is not None:
-            output_filepath = config.PATH_DADOS_PREPROCESSADOS
-            df.to_csv(output_filepath, index=False)
-            logging.info(f'Dados pré-processados salvos em {output_filepath}') """
