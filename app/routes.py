@@ -7,7 +7,7 @@ from scripts.questionario import perguntas_genericas, calcular_afinidade, salvar
 
 logging.basicConfig(level=logging.INFO)
 
-@app.route("/")
+@app.route("/cursos")
 def index():
     logging.info('Rota / acessada')
     try:
@@ -15,12 +15,12 @@ def index():
         logging.info('Dados carregados com sucesso')
         data = df[['NO_CINE_AREA_GERAL']].to_html()
         
-        return render_template('index.html', data=data)
+        return render_template('cursos.html', data=data)
     except Exception as e:
         logging.error(f'Erro ao carregar dados: {e}')
         return f"Erro ao carregar dados: {e}", 500
 
-@app.route("/questionario", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def questionario():
     if request.method == "POST":
         respostas = [request.form.get(f"pergunta_{i}") for i in range(len(perguntas_genericas))]
