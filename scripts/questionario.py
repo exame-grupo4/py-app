@@ -63,9 +63,8 @@ perguntas_avaliativas = [
         "options": ["Números", "Pessoas"],
     },
     {"question": "Você se interessa por empreendedorismo?", "options": ["Sim", "Não"]},
-    # Adicione mais perguntas conforme necessário
+    # Adicionar mais perguntas conforme necessário ou ler de um csv
 ]
-
 
 def perguntar_genericamente():
 
