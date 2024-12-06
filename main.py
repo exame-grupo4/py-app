@@ -1,5 +1,5 @@
 from scripts.data_preprocessing import carregar_dados, preprocessar_dados
-from scripts.questionario import perguntar_genericamente
+from scripts.questionario import questionar
 from app import app
 import config
 
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     df.to_csv(config.PATH_DADOS_PREPROCESSADOS, index=False)
     
     # Executar questionário
-    perguntar_genericamente()
+    questionar()
     
     # Iniciar aplicação Flask
     app.run(debug=True)

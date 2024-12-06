@@ -1,6 +1,12 @@
 import pandas as pd
 import config
 
+def questionar():
+    respostas = perguntar_genericamente()
+    afinidade = calcular_afinidade(respostas)
+    sugerir_area_conhecimento(afinidade)
+    print(carregar_questionario(config.PATH_QUESTIONARIO))
+
 def perguntar_genericamente():
     perguntas_genericas = [
         "Você gosta de trabalhar com números?",
@@ -20,7 +26,7 @@ def perguntar_genericamente():
 
     respostas = []
     for pergunta in perguntas_genericas:
-        resposta = input(pergunta + " (Sim/Não): ")
+        resposta = "Sim" #input(pergunta + " (Sim/Não): ")
         respostas.append(resposta)
     
     return respostas
@@ -64,7 +70,4 @@ def carregar_questionario(filepath):
     return df.head()
 
 if __name__ == "__main__":
-    respostas = perguntar_genericamente()
-    afinidade = calcular_afinidade(respostas)
-    sugerir_area_conhecimento(afinidade)
-    print(carregar_questionario(config.PATH_QUESTIONARIO))
+    questionar()

@@ -25,7 +25,7 @@ def preprocessar_dados(df):
         logging.error(f'Erro no pré-processamento dos dados: {e}')
         return None
 
-if __name__ == "__main__":
+""" if __name__ == "__main__":
     filepath = 'data/raw_data.csv'
     df = carregar_dados(filepath)
     if df is not None:
@@ -33,4 +33,4 @@ if __name__ == "__main__":
         if df is not None:
             output_filepath = config.PATH_DADOS_PREPROCESSADOS
             df.to_csv(output_filepath, index=False)
-            logging.info(f'Dados pré-processados salvos em {output_filepath}')
+            logging.info(f'Dados pré-processados salvos em {output_filepath}') """
