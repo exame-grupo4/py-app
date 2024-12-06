@@ -7,12 +7,12 @@ def questionar():
     sugerir_area_conhecimento(afinidade)
     salvar_respostas(respostas, afinidade)
     show_questionario()
-    
+
 def show_questionario():
     print("Questionário: \n")
     print(carregar_questionario(config.PATH_QUESTIONARIO))
     print("\nAfinidade: \n")
-    print(carregar_questionario(config.PATH_AFINIDADE))
+    print(carregar_afinidade(config.PATH_AFINIDADE))
 
 perguntas_genericas = [
     "Você gosta de trabalhar com números?",
@@ -90,6 +90,10 @@ def salvar_respostas(respostas, afinidade):
 def carregar_questionario(filepath):
     df_perguntas_respostas = pd.read_csv(filepath)
     return df_perguntas_respostas.head()
+
+def carregar_afinidade(filepath):
+    df_afinidade = pd.read_csv(filepath)
+    return df_afinidade.head()
 
 if __name__ == "__main__":
     questionar()
