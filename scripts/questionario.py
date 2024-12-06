@@ -4,9 +4,13 @@ import config
 def questionar():
     respostas = perguntar_genericamente()
     afinidade = calcular_afinidade(respostas)
-    sugerir_area_conhecimento(afinidade)
+    area_sugerida = max(afinidade, key=afinidade.get)
+    cursos_sugeridos = sugerir_cursos(area_sugerida)
     salvar_respostas(respostas, afinidade)
     show_questionario()
+    print(f"\nCursos sugeridos para a área de {area_sugerida}:")
+    for curso in cursos_sugeridos:
+        print(curso)
 
 def show_questionario():
     print("Questionário: \n")
@@ -94,6 +98,11 @@ def carregar_questionario(filepath):
 def carregar_afinidade(filepath):
     df_afinidade = pd.read_csv(filepath)
     return df_afinidade.head()
+
+def sugerir_cursos(area_sugerida):
+    df = pd.read_csv(config.PATH_MICRODADOS, sep=';', encoding='latin1')
+    cursos_sugeridos = df[df['TP_ORGANIZACAO_ACADEMICA'] == area_sugerida]['NO_IES'].unique()
+    return cursos_sugeridos
 
 if __name__ == "__main__":
     questionar()

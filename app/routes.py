@@ -3,7 +3,7 @@ import pandas as pd
 import config
 import logging
 from app import app
-from scripts.questionario import perguntas_genericas, calcular_afinidade, salvar_respostas
+from scripts.questionario import perguntas_genericas, calcular_afinidade, salvar_respostas, sugerir_cursos
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,7 +39,15 @@ def resultado():
         questionario_html = df_questionario.to_html()
         afinidade_html = df_afinidade.to_html()
         
-        return render_template('resultado.html', questionario=questionario_html, afinidade=afinidade_html)
+        area_sugerida = df_afinidade.loc[df_afinidade['pontuacao'].idxmax()]['area_conhecimento']
+        cursos_sugeridos = sugerir_cursos(area_sugerida)
+        
+        cursos_html = "<ul>"
+        for curso in cursos_sugeridos:
+            cursos_html += f"<li>{curso}</li>"
+        cursos_html += "</ul>"
+        
+        return render_template('resultado.html', questionario=questionario_html, afinidade=afinidade_html, cursos=cursos_html)
     except Exception as e:
         logging.error(f'Erro ao carregar resultados do questionário: {e}')
         return f"Erro ao carregar resultados do questionário: {e}", 500
