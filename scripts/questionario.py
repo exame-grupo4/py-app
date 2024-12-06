@@ -5,24 +5,32 @@ def questionar():
     respostas = perguntar_genericamente()
     afinidade = calcular_afinidade(respostas)
     sugerir_area_conhecimento(afinidade)
+    salvar_respostas(respostas, afinidade)
+    show_questionario()
+    
+def show_questionario():
+    print("Questionário: \n")
     print(carregar_questionario(config.PATH_QUESTIONARIO))
+    print("\nAfinidade: \n")
+    print(carregar_questionario(config.PATH_AFINIDADE))
+
+perguntas_genericas = [
+    "Você gosta de trabalhar com números?",
+    "Você prefere atividades ao ar livre?",
+    "Você gosta de resolver problemas complexos?",
+    "Você prefere atividades práticas ou teóricas?",
+    "Você gosta de trabalhar em equipe?",
+    "Você prefere trabalhar em ambientes internos ou externos?",
+    "Você se interessa por tecnologia?",
+    "Você prefere atividades criativas ou analíticas?",
+    "Você se interessa por ciências humanas, exatas ou biológicas?",
+    "Você gosta de atividades que envolvem comunicação?",
+    "Você prefere trabalhar com números ou com pessoas?",
+    "Você se interessa por empreendedorismo?",
+    # Adicione mais perguntas conforme necessário
+]
 
 def perguntar_genericamente():
-    perguntas_genericas = [
-        "Você gosta de trabalhar com números?",
-        "Você prefere atividades ao ar livre?",
-        "Você gosta de resolver problemas complexos?",
-        "Você prefere atividades práticas ou teóricas?",
-        "Você gosta de trabalhar em equipe?",
-        "Você prefere trabalhar em ambientes internos ou externos?",
-        "Você se interessa por tecnologia?",
-        "Você prefere atividades criativas ou analíticas?",
-        "Você se interessa por ciências humanas, exatas ou biológicas?",
-        "Você gosta de atividades que envolvem comunicação?",
-        "Você prefere trabalhar com números ou com pessoas?",
-        "Você se interessa por empreendedorismo?",
-        # Adicione mais perguntas conforme necessário
-    ]
 
     respostas = []
     for pergunta in perguntas_genericas:
@@ -65,9 +73,23 @@ def sugerir_area_conhecimento(afinidade):
     area_sugerida = max(afinidade, key=afinidade.get)
     print(f"\nÁrea de conhecimento sugerida: {area_sugerida}")
 
+def salvar_respostas(respostas, afinidade):
+    df_perguntas_respostas = pd.DataFrame({
+        'pergunta': perguntas_genericas,
+        'resposta': respostas
+    })
+    
+    df_afinidade = pd.DataFrame(list(afinidade.items()), columns=['area_conhecimento', 'pontuacao'])
+    
+    df_perguntas_respostas.to_csv(config.PATH_QUESTIONARIO, index=False)
+    df_afinidade.to_csv(config.PATH_AFINIDADE, index=False)
+    
+    print(f"Respostas salvas em {config.PATH_QUESTIONARIO}")
+    print(f"Afinidade salva em {config.PATH_AFINIDADE}")
+
 def carregar_questionario(filepath):
-    df = pd.read_csv(filepath)
-    return df.head()
+    df_perguntas_respostas = pd.read_csv(filepath)
+    return df_perguntas_respostas.head()
 
 if __name__ == "__main__":
     questionar()
