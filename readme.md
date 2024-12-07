@@ -32,9 +32,9 @@ Para utilizar o projeto, siga os passos abaixo:
     source venv/bin/activate  # No Windows use `venv\Scripts\activate`
     ```
 
-2. Execute o script principal:
+2. Execute o servidor Flask:
     ```bash
-    python main.py
+    flask run
     ```
 
 ## Estrutura do Projeto
@@ -42,7 +42,9 @@ Para utilizar o projeto, siga os passos abaixo:
 - `dicionário_dados_educação_superior.xlsx`: Arquivo Excel contendo o dicionário de dados.
 - `cadastro_ies.csv`: Arquivo CSV com os dados das instituições de ensino superior.
 - `requirements.txt`: Arquivo com as bibliotecas necessárias para o projeto.
-- `main.py`: Script principal para execução do projeto.
+- `app/`: Diretório contendo o aplicativo Flask.
+- `scripts/`: Diretório contendo scripts de processamento de dados.
+- `config.py`: Arquivo de configuração do projeto.
 
 ## Contribuição
 

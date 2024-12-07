@@ -1,6 +1,5 @@
 import pandas as pd
 import config
-from scripts.data_preprocessing import preprocessar_cursos, carregar_dados
 
 perguntas_avaliativas = [
     {"question": "Você gosta de trabalhar com números?", "options": ["Sim", "Não"]},
