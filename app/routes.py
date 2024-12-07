@@ -46,7 +46,7 @@ def questionario():
 
         area_sugerida = sugerir_area_conhecimento(afinidade)
 
-        cursos_sugeridos = sugerir_cursos(area_sugerida)
+        cursos_sugeridos = sugerir_cursos(afinidade)
 
         salvar_sugestao_cursos_em_csv(cursos_sugeridos)
 
@@ -63,14 +63,6 @@ def resultado():
         questionario_html = df_questionario.to_html()
         afinidade_html = df_afinidade.to_html()
         df_cursos_sugeridos_html = df_cursos_sugeridos.to_html()
-
-        """ df_cursos = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS)
-        cursos_sugeridos = df_cursos['NO_CINE_AREA_GERAL'].unique()
-        
-        cursos_html = "<ul>"
-        for curso in cursos_sugeridos:
-            cursos_html += f"<li>{curso}</li>"
-        cursos_html += "</ul>" """
 
         return render_template(
             "resultado.html",

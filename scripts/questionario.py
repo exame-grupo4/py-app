@@ -256,13 +256,23 @@ def sugerir_area_conhecimento(afinidade):
     return area_sugerida
 
 def sugerir_cursos(area_sugerida):
-    df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=";", encoding="latin1")
-    cursos_disponiveis = df["NO_CINE_AREA_GERAL"].unique() == area_sugerida
-    return cursos_disponiveis
+    area_sorteada = sorted(area_sugerida.items(), key=lambda x: x[1], reverse=True)
+    
+    df = pd.DataFrame(
+        list(area_sorteada), columns=["area_conhecimento", "pontuacao"]
+    )
+
+    df = df[df["pontuacao"] > 0]
+    # df = df[["area_conhecimento"]]
+    # df.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
+    
+    # df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=";", encoding="latin1")
+    # cursos_disponiveis = df["NO_CINE_AREA_GERAL"].unique() == area_sugerida
+    return df
 
 def salvar_sugestao_cursos_em_csv(cursos_sugeridos):
-    df_cursos_sugeridos = pd.DataFrame(cursos_sugeridos)
-    df_cursos_sugeridos.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
+    # df_cursos_sugeridos = pd.DataFrame(cursos_sugeridos)
+    cursos_sugeridos.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
     print(f"Cursos sugeridos salvos em {config.PATH_CURSOS_SUGERIDOS}")
 
 
