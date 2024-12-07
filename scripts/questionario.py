@@ -2,31 +2,6 @@ import pandas as pd
 import config
 from scripts.data_preprocessing import preprocessar_cursos, carregar_dados
 
-
-""" def questionar():
-    # Preprocessar cursos
-    df = carregar_dados(config.PATH_MICRODADOS)
-    df = preprocessar_cursos(df)
-    df.to_csv(config.PATH_CURSOS_PREPROCESSADOS, index=False)
-
-    # afinidade = calcular_afinidade(respostas)
-
-    area_sugerida = sugerir_area_conhecimento(afinidade)
-
-    cursos_sugeridos = sugerir_cursos(area_sugerida)
-    salvar_respostas(respostas, afinidade)
-    show_questionario()
-    print(f"\nCursos sugeridos para a área de {area_sugerida}:")
-    for curso in cursos_sugeridos:
-        print(curso)
-
-def show_questionario():
-    print("Questionário: \n")
-    print(carregar_questionario(config.PATH_QUESTIONARIO))
-    print("\nAfinidade: \n")
-    print(carregar_afinidade(config.PATH_AFINIDADE)) """
-
-
 perguntas_avaliativas = [
     {"question": "Você gosta de trabalhar com números?", "options": ["Sim", "Não"]},
     {"question": "Você prefere atividades ao ar livre?", "options": ["Sim", "Não"]},
@@ -230,7 +205,6 @@ def calcular_afinidade(respostas):
                 afinidade[area] += 1
     return afinidade
 
-
 def salvar_respostas_em_csv(respostas, afinidade):
     df_perguntas_respostas = pd.DataFrame(
         {
@@ -249,33 +223,17 @@ def salvar_respostas_em_csv(respostas, afinidade):
     print(f"Respostas salvas em {config.PATH_QUESTIONARIO}")
     print(f"Afinidade salva em {config.PATH_AFINIDADE}")
 
-
-def sugerir_area_conhecimento(afinidade):
-    area_sugerida = max(afinidade, key=afinidade.get)
-    print(f"\nÁrea de conhecimento sugerida: {area_sugerida}")
-    return area_sugerida
-
-def sugerir_cursos(area_sugerida):
-    area_sorteada = sorted(area_sugerida.items(), key=lambda x: x[1], reverse=True)
+def sugerir_cursos(afinidade):
+    area_sorteada = sorted(afinidade.items(), key=lambda x: x[1], reverse=True)
     
     df = pd.DataFrame(
         list(area_sorteada), columns=["area_conhecimento", "pontuacao"]
     )
 
     df = df[df["pontuacao"] > 0]
-    # df = df[["area_conhecimento"]]
-    # df.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
     
-    # df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=";", encoding="latin1")
-    # cursos_disponiveis = df["NO_CINE_AREA_GERAL"].unique() == area_sugerida
     return df
 
 def salvar_sugestao_cursos_em_csv(cursos_sugeridos):
-    # df_cursos_sugeridos = pd.DataFrame(cursos_sugeridos)
     cursos_sugeridos.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
     print(f"Cursos sugeridos salvos em {config.PATH_CURSOS_SUGERIDOS}")
-
-
-""" if __name__ == "__main__":
-    questionar()
- """

@@ -1,4 +1,4 @@
-from flask import render_template_string, render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for
 import pandas as pd
 import config
 import logging
@@ -8,7 +8,6 @@ from scripts.questionario import (
     calcular_afinidade,
     salvar_respostas_em_csv,
     salvar_sugestao_cursos_em_csv,
-    sugerir_area_conhecimento,
     sugerir_cursos,
 )
 
@@ -35,7 +34,7 @@ def questionario():
         return render_template(
             "questionario.html", perguntas=perguntas_avaliativas, enumerate=enumerate
         )
-    else:  # else cuz of readability
+    else:
         respostas = [
             request.form.get(f"pergunta_{i}") for i in range(len(perguntas_avaliativas))
         ]
@@ -43,8 +42,6 @@ def questionario():
         afinidade = calcular_afinidade(respostas)
 
         salvar_respostas_em_csv(respostas, afinidade)
-
-        area_sugerida = sugerir_area_conhecimento(afinidade)
 
         cursos_sugeridos = sugerir_cursos(afinidade)
 
