@@ -54,17 +54,14 @@ def questionario():
 def resultado():
     try:
         df_questionario = pd.read_csv(config.PATH_QUESTIONARIO)
-        df_afinidade = pd.read_csv(config.PATH_AFINIDADE)
         df_cursos_sugeridos = pd.read_csv(config.PATH_CURSOS_SUGERIDOS)
 
         questionario_html = df_questionario.to_html()
-        afinidade_html = df_afinidade.to_html()
         df_cursos_sugeridos_html = df_cursos_sugeridos.to_html()
 
         return render_template(
             "resultado.html",
             questionario=questionario_html,
-            afinidade=afinidade_html,
             cursos_sugeridos=df_cursos_sugeridos_html,
         )
     except Exception as e:
