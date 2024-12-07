@@ -1,5 +1,4 @@
 from scripts.data_preprocessing import carregar_dados, preprocessar_dados, preprocessar_cursos
-from scripts.questionario import questionar
 from app import app
 import config
 

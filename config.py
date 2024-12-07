@@ -7,5 +7,6 @@ PATH_CURSOS_PREPROCESSADOS = os.path.join(BASE_PATH, 'data/cursos_preprocessados
 
 PATH_QUESTIONARIO = os.path.join(BASE_PATH, 'data/questionario.csv')
 PATH_AFINIDADE = os.path.join(BASE_PATH, 'data/afinidade.csv')
+PATH_CURSOS_SUGERIDOS = os.path.join(BASE_PATH, 'data/cursos_sugeridos.csv')
 
 PATH_TEMPLATE_HTML = os.path.join(BASE_PATH, 'app/static/templates/index.html')

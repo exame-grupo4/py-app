@@ -3,17 +3,16 @@ import config
 from scripts.data_preprocessing import preprocessar_cursos, carregar_dados
 
 
-def questionar():
+""" def questionar():
     # Preprocessar cursos
     df = carregar_dados(config.PATH_MICRODADOS)
     df = preprocessar_cursos(df)
     df.to_csv(config.PATH_CURSOS_PREPROCESSADOS, index=False)
 
-    # Realizar questionário
-    respostas = perguntar_genericamente()
+    # afinidade = calcular_afinidade(respostas)
 
-    afinidade = calcular_afinidade(respostas)
     area_sugerida = sugerir_area_conhecimento(afinidade)
+
     cursos_sugeridos = sugerir_cursos(area_sugerida)
     salvar_respostas(respostas, afinidade)
     show_questionario()
@@ -21,12 +20,11 @@ def questionar():
     for curso in cursos_sugeridos:
         print(curso)
 
-
 def show_questionario():
     print("Questionário: \n")
     print(carregar_questionario(config.PATH_QUESTIONARIO))
     print("\nAfinidade: \n")
-    print(carregar_afinidade(config.PATH_AFINIDADE))
+    print(carregar_afinidade(config.PATH_AFINIDADE)) """
 
 
 perguntas_avaliativas = [
@@ -65,16 +63,6 @@ perguntas_avaliativas = [
     {"question": "Você se interessa por empreendedorismo?", "options": ["Sim", "Não"]},
     # Adicionar mais perguntas conforme necessário ou ler de um csv
 ]
-
-def perguntar_genericamente():
-
-    respostas = []
-    for pergunta in perguntas_avaliativas:
-        resposta = "Sim"  # input(pergunta + " (Sim/Não): ")
-        respostas.append(resposta)
-
-    return respostas
-
 
 def calcular_afinidade(respostas):
     # Definir áreas de conhecimento e suas características
@@ -243,13 +231,7 @@ def calcular_afinidade(respostas):
     return afinidade
 
 
-def sugerir_area_conhecimento(afinidade):
-    area_sugerida = max(afinidade, key=afinidade.get)
-    print(f"\nÁrea de conhecimento sugerida: {area_sugerida}")
-    return area_sugerida
-
-
-def salvar_respostas(respostas, afinidade):
+def salvar_respostas_em_csv(respostas, afinidade):
     df_perguntas_respostas = pd.DataFrame(
         {
             "pergunta": [pergunta["question"] for pergunta in perguntas_avaliativas],
@@ -268,21 +250,22 @@ def salvar_respostas(respostas, afinidade):
     print(f"Afinidade salva em {config.PATH_AFINIDADE}")
 
 
-def carregar_questionario(filepath):
-    df_perguntas_respostas = pd.read_csv(filepath)
-    return df_perguntas_respostas.head()
-
-
-def carregar_afinidade(filepath):
-    df_afinidade = pd.read_csv(filepath)
-    return df_afinidade.head()
-
+def sugerir_area_conhecimento(afinidade):
+    area_sugerida = max(afinidade, key=afinidade.get)
+    print(f"\nÁrea de conhecimento sugerida: {area_sugerida}")
+    return area_sugerida
 
 def sugerir_cursos(area_sugerida):
     df = pd.read_csv(config.PATH_CURSOS_PREPROCESSADOS, sep=";", encoding="latin1")
     cursos_disponiveis = df["NO_CINE_AREA_GERAL"].unique() == area_sugerida
     return cursos_disponiveis
 
+def salvar_sugestao_cursos_em_csv(cursos_sugeridos):
+    df_cursos_sugeridos = pd.DataFrame(cursos_sugeridos)
+    df_cursos_sugeridos.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
+    print(f"Cursos sugeridos salvos em {config.PATH_CURSOS_SUGERIDOS}")
 
-if __name__ == "__main__":
+
+""" if __name__ == "__main__":
     questionar()
+ """
