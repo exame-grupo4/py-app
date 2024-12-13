@@ -37,10 +37,14 @@ Para utilizar o projeto, siga os passos abaixo:
     flask run
     ```
 
+
+
 3. Para o questionário com o front usando o Streamlit execute:
     ```bash
     streamlit run <path>/app/questionario.py # Requer os anteriores rodando
     ```
+
+Nota para o uso do streamlit: este serve como frontend para o questionário, exclusivamente. Ao enviar as respostas do streamlit, estas estarão atualizadas na rota /resultado.
 
 
 ## Estrutura do Projeto
