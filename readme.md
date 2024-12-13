@@ -37,6 +37,12 @@ Para utilizar o projeto, siga os passos abaixo:
     flask run
     ```
 
+3. Para o questionário com o front usando o Streamlit execute:
+    ```bash
+    streamlit run <path>/app/questionario.py # Requer os anteriores rodando
+    ```
+
+
 ## Estrutura do Projeto
 
 - `dicionário_dados_educação_superior.xlsx`: Arquivo Excel contendo o dicionário de dados.
