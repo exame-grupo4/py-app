@@ -26,7 +26,7 @@ def salvar_respostas_em_csv(perguntas, respostas, afinidade):
         while len(data[key]) < max_length:
             data[key].append("")
     df_perguntas_respostas = pd.DataFrame(data)
-    df_perguntas_respostas.to_csv('respostas.csv', index=False)
+    df_perguntas_respostas.to_csv(config.PATH_CURSOS_SUGERIDOS, index=False)
 
 def sugerir_cursos(afinidade):
     area_sorteada = sorted(afinidade.items(), key=lambda x: x[1], reverse=True)
