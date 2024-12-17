@@ -23,7 +23,7 @@ def questionario():
 
         cursos_sugeridos = sugerir_cursos(afinidade)
 
-        resultado(respostas, cursos_sugeridos)
+        resultado(respostas, cursos_sugeridos, afinidade)
 
 if __name__ == "__main__":
     questionario()
